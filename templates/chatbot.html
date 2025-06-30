@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpathAI Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/chatbot.css">
+</head>
+
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>EmpathAI <i class="fas fa-robot"></i></h2>
+            <button class="sidebar-toggle-btn" id="sidebar-toggle-btn">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <button class="new-chat-btn" id="new-chat-btn">
+            <i class="fas fa-plus-circle"></i> <span>Start New Journey</span>
+        </button>
+        <div class="chat-sessions-list-container" id="chat-sessions-list-container">
+            <h3>Active Chats</h3>
+            <ul class="chat-sessions-list" id="chat-sessions-list"></ul>
+            <h3>Deleted Chats</h3>
+            <ul class="chat-sessions-list" id="deleted-chat-sessions-list"></ul>
+        </div>
+    </aside>
+    <main class="chat-main" id="chat-main">
+        <div class="chat-header">
+            <h2 id="current-chat-title">Select a Chat or Start New</h2>
+            <div class="chat-options">
+                <button class="chat-option-btn" id="summarize-chat-btn" title="Summarize this chat">
+                    <i class="fas fa-clipboard-list"></i> <span class="btn-text">Summarize</span>
+                </button>
+                <button class="chat-option-btn" id="insightful-question-btn" title="Generate an insightful question">
+                    <i class="fas fa-question-circle"></i> <span class="btn-text">Question</span>
+                </button>
+                <button class="chat-option-btn" id="coping-mechanism-btn" title="Suggest a coping mechanism">
+                    <i class="fas fa-hand-holding-heart"></i> <span class="btn-text">Coping ✨</span>
+                </button>
+                <button class="chat-option-btn" id="positive-reframe-btn" title="Reframe last message positively">
+                    <i class="fas fa-lightbulb"></i> <span class="btn-text">Reframe ✨</span>
+                </button>
+                <button class="chat-option-btn" id="delete-chat-btn" title="Delete this chat">
+                    <i class="fas fa-trash-alt"></i> <span class="btn-text">Delete</span>
+                </button>
+                <button class="chat-option-btn" id="upload-image-btn" title="Upload image">
+                    <i class="fas fa-image"></i> <span class="btn-text">Upload</span>
+                </button>
+                <button class="chat-option-btn" id="camera-btn" title="Take photo">
+                    <i class="fas fa-camera"></i> <span class="btn-text">Camera</span>
+                </button>
+            </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="loading-indicator" id="message-loading-indicator">
+                <i class="fas fa-spinner"></i> Loading messages...
+            </div>
+            <div class="typing-animation" id="typing-animation" style="display: none;">
+                <span class="typing-dot"></span>
+                <span class="typing-dot"></span>
+                <span class="typing-dot"></span>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="user-input" class="chat-input" placeholder="Type your message...">
+            <button id="send-btn" class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </main>
+    <div class="modal-overlay" id="confirmation-modal">
+        <div class="modal-content">
+            <h3 id="confirmation-modal-title">Confirm Action</h3>
+            <p id="confirmation-modal-message">Are you sure you want to perform this action?</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" id="modal-confirm-btn">Confirm</button>
+                <button class="modal-btn cancel" id="modal-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="info-modal">
+        <div class="modal-content">
+            <h3 id="info-modal-title">Information</h3>
+            <p id="info-modal-message">This is a general information message.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" id="info-modal-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="camera-modal">
+        <div class="modal-content">
+            <h3>Take a Photo</h3>
+            <video id="video" autoplay></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div class="modal-buttons">
+                <button class="modal-btn" id="capture-btn">Capture</button>
+                <button class="modal-btn" id="submit-camera-btn" style="display: none;">Submit</button>
+                <button class="modal-btn cancel" id="camera-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/chatbot.js"></script>
+</body>
+
+</html>

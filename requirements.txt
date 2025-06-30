@@ -1,0 +1,5 @@
+Flask
+textblob
+vaderSentiment
+transformers
+torch

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - EmpathAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">EmpathAI <i class="fas fa-robot"></i></a>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About EmpathAI</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li class="auth-buttons-mobile">
+                    <a href="/login" class="btn btn-login">Login</a>
+                </li>
+                <li class="auth-buttons-mobile">
+                    <a href="/signup" class="btn btn-signup">Sign Up</a>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="/login" class="btn btn-login">Login</a>
+                <a href="/signup" class="btn btn-signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Terms of Service</h2>
+                <p class="section-subtitle">By using EmpathAI, you agree to these terms.</p>
+                <div class="about-content">
+                    <p>EmpathAI is a platform designed to provide emotional support through AI-driven conversations. By
+                        using our service, you agree to use it responsibly and respect the privacy of your data.</p>
+                    <p>Our service is not a substitute for professional mental health care. Users are responsible for
+                        seeking professional help when needed.</p>
+                    <p>For any questions about our terms, please contact us at support@empathai.com.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2025 EmpathAI. All rights reserved.</p>
+            <p>Designed with ❤️ by Your Team Name</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='welcome.js') }}"></script>
+</body>
+
+</html>

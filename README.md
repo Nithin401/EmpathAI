@@ -1,4 +1,4 @@
-# EmpathAI
+
 # EmpathAI – Emotion-Aware Conversational Chatbot
 
 EmpathAI is an intelligent conversational chatbot designed to understand human emotions and respond with empathy. It analyzes user input using Natural Language Processing (NLP) techniques and generates context-aware, emotionally appropriate responses.
